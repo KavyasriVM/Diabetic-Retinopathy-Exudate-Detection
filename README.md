@@ -1,34 +1,63 @@
 # Diabetic-Retinopathy-Exudate-Detection
-Project Overview
-This project provides a comprehensive workflow for detecting exudates—key retinal lesions associated with diabetic retinopathy—using retinal fundus images from publicly available clinical datasets (APTOS and IDRiD). The goal is to develop a robust, automated system that supports early screening and diagnosis of diabetic retinopathy with high accuracy, reliability, and scalability to real-world clinical settings.
 
-The system includes advanced preprocessing steps such as automated optic disc removal, contrast enhancement, and green channel emphasis, combined with a multi-scale feature fusion approach using a Feature Pyramid Network (FPN) built on the EfficientNetB0 backbone. The pipeline is designed for batch processing, extensive error handling, and clinical workflow integration.
+## Project Overview
+This project provides a **comprehensive automated workflow** for detecting **exudates**—key retinal lesions linked to **diabetic retinopathy**—using retinal fundus images from publicly available clinical datasets (**APTOS** and **IDRiD**).  
+The goal is to develop a **robust, scalable, and clinically viable** screening system that ensures **early detection** and **accurate diagnosis**.
 
-Features
-    Automated optic disc localization and removal using intensity and anatomical prior methods
-    Image enhancement via CLAHE and green channel normalization
-    Multi-scale feature extraction and fusion with FPN and EfficientNetB0 backbone
-    Binary classification of retinal images based on presence or absence of exudates
-    Support for large-scale batch processing of fundus image datasets
-    Performance evaluation with sensitivity, specificity, accuracy, and F1-score metrics
-    Visualization tools for segmentation masks and overlay results
-    Modular and configurable pipeline enabling reproducible experiments and parameter tuning
+The system integrates:
+- **Advanced preprocessing** (optic disc removal, contrast enhancement, green channel emphasis)
+- **Multi-scale feature fusion** using a **Feature Pyramid Network (FPN)** with an **EfficientNetB0** backbone
+- **Automated batch processing** for large-scale datasets
+- **Clinical workflow integration** and reproducible experiments
 
-Dataset
-  APTOS: A large dataset of retinal fundus images used for diabetic retinopathy screening
-  IDRiD: A retinal image dataset with detailed annotations for lesions including exudates
+---
 
-Requirements
-  Python 3.8 or higher
-  OpenCV
-  Pillow
-  NumPy
-  scikit-image
-  scikit-learn
-  PyTorch 
-  matplotlib
-  seaborn
+## Features
+- **Automated Optic Disc Localization & Removal**  
+  - Uses intensity thresholding and anatomical priors
+  - Reduces false positives in exudate detection
+- **Image Enhancement**  
+  - CLAHE (Contrast Limited Adaptive Histogram Equalization)  
+  - Green channel normalization for improved lesion visibility
+- **Multi-scale Feature Extraction**  
+  - FPN + EfficientNetB0 backbone
+  - Enhanced detection of small and large lesions
+- **Binary Classification**  
+  - Presence vs. absence of exudates
+- **Scalable Batch Processing**  
+  - Handles thousands of images efficiently
+- **Performance Metrics**  
+  - Sensitivity, Specificity, Accuracy, F1-score
+- **Visualization Tools**  
+  - Segmentation masks  
+  - Lesion overlay on fundus images
+- **Modular & Configurable Pipeline**  
+  - Easy parameter tuning and reproducibility
 
-imgaug or albumentations (for data augmentation)
+---
 
-Additional libraries for logging, configuration handling, and experiment tracking (optional)
+## Dataset
+- **APTOS** – Large-scale dataset for diabetic retinopathy screening  
+- **IDRiD** – Retinal images with detailed lesion annotations, including exudates
+
+---
+
+## Requirements
+- **Python** ≥ 3.8  
+- **Core Libraries**
+  - `OpenCV`
+  - `Pillow`
+  - `NumPy`
+  - `scikit-image`
+  - `scikit-learn`
+  - `PyTorch`
+  - `matplotlib`
+  - `seaborn`
+- **Data Augmentation**
+  - `imgaug` or `albumentations`
+- **Optional**
+  - Logging & experiment tracking libraries (`wandb`, `tensorboard`, `hydra-core`)
+
+Install dependencies:
+```bash
+pip install -r requirements.txt
